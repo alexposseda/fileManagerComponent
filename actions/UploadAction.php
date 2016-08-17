@@ -7,10 +7,13 @@
     class UploadAction extends Action{
         public $uploadPath;
         public $uploadModel;
+        public $sessionEnable;
 
         public function run(){
             $this->uploadModel->file = UploadedFile::getInstanceByName(Yii::$app->fileManager->getInputName());
-            $result = Yii::$app->fileManager->uploadFile($this->uploadModel, $this->uploadPath);
-            return var_dump($result);
+            $result = Yii::$app->fileManager->uploadFile($this->uploadModel, $this->uploadPath, $this->sessionEnable);
+            return $this->controller->render('test', [
+                'result' => $result
+            ]);
         }
     }

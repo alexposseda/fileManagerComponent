@@ -1,5 +1,7 @@
 <?php
     namespace common\components\fileManager\models;
+    use Yii;
+
     /**
      * Class PictureModel
      * @package common\components\fileManager\models
@@ -7,8 +9,7 @@
      * @property \yii\web\UploadedFile $file
      */
     class PictureModel extends FileManagerModel{
-
-        public  function rules(){
+        public function rules(){
             return $this->validationRules;
         }
 
@@ -20,14 +21,10 @@
         public function uploadFile($directory){
             $fileName = uniqid(time(), true);
             $this->savePath = $directory.$fileName.'.'.$this->file->extension;
-            if(!$this->file->saveAs( $this->savePath)){
+            if(!$this->file->saveAs(Yii::$app->fileManager->storagePath.$this->savePath)){
                 $this->addError('file', 'Upload failed');
             }
 
             return $this;
-        }
-
-        public function removeFile($path){
-            // TODO: Implement removeFile() method.
         }
     }

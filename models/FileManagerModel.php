@@ -34,6 +34,4 @@
          * @return FileManagerModel
          */
         abstract public function uploadFile($directory);
-
-        abstract public function removeFile($path);
     }

@@ -1,5 +1,6 @@
 {
   "name": "grsolution/yii2-filemanager",
+  "version":"1.0.0",
   "type": "yii2-extension",
   "description": "File Manager to work this file",
   "keywords": ["yii2", "file", "filemanager", "uploader"],

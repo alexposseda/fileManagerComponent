@@ -1,5 +1,6 @@
 <?php
     namespace common\components\fileManager;
+
     use common\components\fileManager\models\FileManagerModel;
     use Yii;
     use yii\base\Object;
@@ -39,30 +40,37 @@
                 if(!is_dir($this->storagePath.$directory)){
                     $this->createDirectory($directory);
                 }
-                if($model->uploadFile($directory.DIRECTORY_SEPARATOR)->hasErrors()){
-                    return $this->sendResponse($model->getErrors($this->inputName));
+                if($model->uploadFile($directory.DIRECTORY_SEPARATOR)
+                         ->hasErrors()
+                ){
+                    return $this->sendResponse(['error' => $model->getErrors($this->inputName)]);
                 }
                 if($sessionEnable){
                     $this->saveToSession($model->savePath);
                 }
 
-                return $this->sendResponse($model->savePath);
+                return $this->sendResponse([
+                                               'file' => [
+                                                   'storageUrl' => Yii::$app->fileManager->storageUrl,
+                                                   'path'       => $model->savePath
+                                               ]
+                                           ]);
             }
 
-            return $this->sendResponse($model->getErrors($this->inputName));
+            return $this->sendResponse(['error' => $model->getErrors($this->inputName)]);
         }
 
         public function removeFile($path){
             $fullPath = $this->storagePath.$path;
             if(file_exists($fullPath)){
                 if(!unlink($fullPath)){
-                    //todo разобраться с шаблоном для передачи результата
-                    return $this->sendResponse('Can not delete file');
+                    return $this->sendResponse(['error' => ['Can not delete file']]);
                 }
             }
 
             $this->removeFromSession($path);
-            return $this->sendResponse('success');
+
+            return $this->sendResponse(['success' => ['file removed']]);
         }
 
         /**

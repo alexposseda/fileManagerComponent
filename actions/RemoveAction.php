@@ -5,7 +5,6 @@
 
     class RemoveAction extends Action{
         public function run(){
-            //todo проверить на введенное имя!
-            return Yii::$app->fileManager->removeFile(Yii::$app->request->post(Yii::$app->fileManager->getInputName()));
+            return Yii::$app->fileManager->removeFile(Yii::$app->request->post('path'));
         }
     }

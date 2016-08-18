@@ -12,8 +12,6 @@
         public function run(){
             $this->uploadModel->file = UploadedFile::getInstanceByName(Yii::$app->fileManager->getInputName());
             $result = Yii::$app->fileManager->uploadFile($this->uploadModel, $this->uploadPath, $this->sessionEnable);
-            return $this->controller->render('test', [
-                'result' => $result
-            ]);
+            return $result;
         }
     }

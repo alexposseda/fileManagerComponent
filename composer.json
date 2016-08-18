@@ -1,14 +1,22 @@
 {
   "name": "grsolution/yii2-filemanager",
-
   "type": "yii2-extension",
-
   "description": "File Manager to work this file",
   "keywords": ["yii2", "file", "filemanager", "uploader"],
+  "license": "BSD-3-Clause",
   "support": {
-    "source": "https://github.com/alexposseda/fileManagerComponent.git"
+      "issues": "https://github.com/alexposseda/fileManagerComponent/issues",
+      "forum": "http://www.yiiframework.com/forum/",
+      "wiki": "http://www.yiiframework.com/wiki/",
+      "irc": "irc://irc.freenode.net/yii",
+      "source": "https://github.com/alexposseda/fileManagerComponent"
   },
-
+  "authors": [
+        {
+            "name": "Alex Posseda",
+            "email": "alexposseda@gmail.com"
+        }
+    ],
   "require": {
     "yiisoft/yii2": "*"
   },

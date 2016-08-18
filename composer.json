@@ -5,16 +5,9 @@
 
   "description": "File Manager to work this file",
   "keywords": ["yii2", "file", "filemanager", "uploader"],
-  "license": "",
   "support": {
     "source": "https://github.com/alexposseda/fileManagerComponent.git"
   },
-  "authors": [
-    {
-      "name": "Alex",
-      "email": ""
-    }
-  ],
 
   "require": {
     "yiisoft/yii2": "*"

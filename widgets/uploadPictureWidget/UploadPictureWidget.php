@@ -1,5 +1,5 @@
 <?php
-    namespace common\components\fileManager\widgets\uploadPictureWidget;
+    namespace grsolution\fileManager\widgets\uploadPictureWidget;
 
     use Yii;
     use yii\base\Widget;

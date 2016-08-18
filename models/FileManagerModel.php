@@ -23,9 +23,6 @@
                     $this->validationRules
                 )
             ];
-//            $this->validationRules = [
-//                [['file'], 'file', 'maxSize' => 1024 * 1024, 'extensions' => 'png, jpg']
-//            ];
         }
 
         /**

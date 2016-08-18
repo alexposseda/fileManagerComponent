@@ -1,0 +1,32 @@
+{
+  // название пакета
+  "name": "grsolution/yii2-filemanager",
+
+  // тип пакета
+  "type": "yii2-extension",
+
+  "description": "File Manager to work this file",
+  "keywords": ["yii2", "file", "filemanager", "uploader"],
+  "license": "",
+  "support": {
+    "source": "https://github.com/alexposseda/fileManagerComponent.git"
+  },
+  "authors": [
+    {
+      "name": "Alex",
+      "email": ""
+    }
+  ],
+
+  // зависимости пакета
+  "require": {
+    "yiisoft/yii2": "*"
+  },
+
+  // указание автозагрузчика классов
+  "autoload": {
+    "psr-4": {
+      "grsolution\\filemanager\\": ""
+    }
+  }
+}
